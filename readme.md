@@ -20,8 +20,9 @@ git clone <url>									从远端拉取一个仓库
 仓库创建成功后，会在当前目录或`project-name`下生成一个 `.git`目录，如下所示：
 
 <div style="text-align:center">
-    <img src="C:\Users\user\Desktop\git_lea\images\.git.png" alt=".git目录">
+    <img src="images\.git.png" alt=".git目录">
 </div>
+
 
 每个文件夹和文件的作用如下：
 
@@ -110,8 +111,9 @@ git clone <url>									从远端拉取一个仓库
 #### 四、文件添加及提交
 
 <div style="text-align:center">
-    <img src="C:\Users\user\Desktop\git_lea\images\workflow.png" alt="工作流程">
+    <img src="images\workflow.png" alt="工作流程">
 </div>
+
 
 1. Working --> Stage
 
