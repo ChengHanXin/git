@@ -141,7 +141,10 @@ git clone <url>									从远端拉取一个仓库
    git log --oneline						查看提交历史，--oneline表示简介模式
    ```
 
-5. reset
+#### 五、撤销、恢复、差异
+
+
+1. reset
 
    ``` bash
    git reset --soft <commit-id>			删除commit记录，Working和Stage保持不变
@@ -149,9 +152,36 @@ git clone <url>									从远端拉取一个仓库
    git reset --hard <commit-id>			删除commit记录，修改Working和Stage到id
    ```
 
-   
+2. diff         注意：查看的差异是已经被`Git`跟踪的文件，新建的文件但没有add，不在范围之内！
 
+   ```bash
+   git diff 								查看working 和 stage之间的差异
+   git diff HEAD							查看working + stage 和 repo之间的差异
+   git diff --cached / --staged            查看stage 和 repo之间的差异
+   ```
 
+3. rm         注意： 记得commit提交到本地仓库
+
+   ```bash
+   rm <file>								1.删除本地working中的文件
+   git add <file>							2.使用add告诉git删除stage中对应的文件
+   git rm <file>							一步删除working和stage中的文件
+   git rm --cached <file>					删除stage但不删除working中的文件，希望该文件不被版本管理
+   ```
+
+4. [.gitignore](https://github.com/github/gitignore)
+
+   .gitignore文件用来管理哪些文件在版本管理中被忽略
+
+   > + 系统或者软件自动生成的文件
+   > + 编译产生的中间文件和结果文件
+   > + 运行时生成的日志文件、缓存文件、临时文件
+   > + 涉及身份、密码、口令、密钥等敏感信息文件
+
+   + 匹配规则：从上到下，每一行表示一个忽略模式
+   + 可以使用正则表达式来表示忽略模式
+
+#### 六、远程仓库
 
 
 
