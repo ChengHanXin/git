@@ -185,7 +185,49 @@ git clone <url>									从远端拉取一个仓库
 
 #### 六、远程仓库
 
+1. 添加远程仓库
 
+   ```bash
+   git remote add <remote-name> <remote-url>
+   ```
+
+2. 查看远程仓库
+
+   ```bash
+   git remote -v
+   ```
+
+3. 删除远程仓库
+
+   ```bash
+   git remote rm <remote-name>
+   ```
+
+4. 重命名远程仓库
+
+   ```bash
+   git remote rename <old-name> <new-name>
+   ```
+
+5. 从远程仓库拉取代码。默认拉取远程仓库名origin的master或者main分支。
+
+   ```bash
+   git pull <remote-name> <branch-name>
+   ```
+
+6. 推送代码到远程仓库
+
+   ```bash
+   git push <remote-name> <branch-name>
+   ```
+
+7. 查看远程分支
+
+   ```bash
+   git branch -r
+   ```
+
+   
 
 
 
