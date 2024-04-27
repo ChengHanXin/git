@@ -141,6 +141,9 @@ git clone <url>									从远端拉取一个仓库
    ```bash
    git status								查看文件状态，列出还未提交的新的或修改后的文件
    git log --oneline						查看提交历史，--oneline表示简介模式
+   git ls-files							列出所有已跟踪的文件，包括已修改但尚未暂存的文件
+   git ls-files -c							只列出已经通过git add添加到暂存区的文件
+   git ls-files -o							只列出未跟踪的文件
    ```
 
 #### 五、撤销、恢复、差异
@@ -184,6 +187,53 @@ git clone <url>									从远端拉取一个仓库
    + 可以使用正则表达式来表示忽略模式
 
 #### 六、远程仓库
+
+1. 添加远程仓库
+
+   ```bash
+   git remote add <remote-name> <remote-url>
+   ```
+
+2. 查看远程仓库
+
+   ```bash
+   git remote -v
+   ```
+
+3. 删除远程仓库
+
+   ```bash
+   git remote rm <remote-name>
+   ```
+
+4. 重命名远程仓库
+
+   ```bash
+   git remote rename <old-name> <new-name>
+   ```
+
+5. 从远程仓库拉取代码。默认拉取远程仓库名origin的master或者main分支。
+
+   ```bash
+   git pull <remote-name> <branch-name>
+   ```
+
+6. 推送代码到远程仓库
+
+   ```bash
+   git push <remote-name> <branch-name>
+   ```
+
+7. 查看远程分支
+
+   ```bash
+   git branch -r
+   ```
+
+
+#### 七、分支
+
+​	
 
 
 
