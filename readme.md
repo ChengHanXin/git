@@ -230,12 +230,7 @@ git clone <url>									从远端拉取一个仓库
    git branch -r
    ```
 
-
 #### 七、分支
-
-​	
-
-
 
 
 
