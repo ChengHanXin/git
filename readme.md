@@ -127,7 +127,8 @@ git clone <url>									从远端拉取一个仓库
 2. Stage --> Working
 
    ```bash
-   git rm --cached <filename>						从Stage中移除
+   git rm --cached <filename>						从Stage中移除，working中文件没有变化
+   git restore --staged <filename>					撤销Stage中的文件，重新放回working 
    ```
 
 3. Stage --> Local Repository
@@ -232,5 +233,91 @@ git clone <url>									从远端拉取一个仓库
 
 #### 七、分支
 
+1. 查看分支列表
 
+   ```bash
+   git branch 
+   ```
 
+2. 创建分支
+
+   ```bash
+   git branch <branch-name>
+   ```
+
+3. 切换分支
+
+   ```bash
+   git switch <branch-name>
+   ```
+
+4. 合并分支
+
+   ```bash
+   git merge <branch-name>						branch-name为待合并的分支
+   ```
+
+5. 删除分支
+
+   ```bash
+   git branch -d <branch-name>					删除已合并的分支
+   git branch -D <branch-name>					删除未合并的分支
+   git push origin --delete <branch-name>		删除远程仓库分支
+   ```
+
+6. 给当前提交打标签，通常用于版本发布
+
+   ```bash
+   git tag <tag-name>
+   ```
+
+7. 合并冲突
+
+   当在不同分支对同一文件的同一处进行不同的修改，在合并时会产生冲突，系统不知道应该保留哪次修改。这时需要我们手动来解决冲突，然后合并。
+
+8. Rebase
+
+   除了merge外，还可以使用rebase来进行不同分支间的合并。
+
+   + 每个分支都有一个HEAD指针用来指向最新的提交；
+   + 首先，找到分支间的共同祖先，即产生分支的节点
+   + 然后，以rebase后跟的分支作为基础，将另一分支的提交记录添加到共同祖先的后面，形成一个分支。
+
+   ```bash
+   git switch <branch-name>						1.切换分支
+   git rebase <another-branch-name>				2.变基操作
+   ```
+
+   <div style="text-align:center">
+       <img src="images\rebase.jpg" alt="rebase">
+   </div>
+
+   > example1：
+   >
+   > > main： m1，m2，m3，m4，m5
+   > >
+   > > dev：d1，d2
+   > >
+   > > git rebase main：
+   > >
+   > > ​	m1，m2，m3，m4，m5，d1，d2
+   >
+   > example2：
+   >
+   > > main： m1，m2，m3，m4，m5
+   > >
+   > > dev：d1，d2
+   > >
+   > > git rebase dev：
+   > >
+   > > ​	m1，m2，m3，d1，d2，m4，m5
+
+#### 八、分支管理和工作流模型
+
+<div style="text-align:center">
+    <img src="images\branch_manage.jpg" alt="branch_manage">
+</div>
+
+<div style="text-align:center">
+    <img src="images\github_flow.jpg" alt="github_flow">
+</div>
